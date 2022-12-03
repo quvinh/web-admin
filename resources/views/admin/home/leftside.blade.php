@@ -61,6 +61,35 @@
                     </div>
                 </li>
             @endcan
+            @canany(['acc.view', 'inv.view', 'log.view'])
+                <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#sidebarSystem" aria-expanded="false" aria-controls="sidebarSystem"
+                        class="side-nav-link">
+                        <i class="uil-spin"></i>
+                        <span> @lang('leftside.system.system') </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="sidebarSystem">
+                        <ul class="side-nav-second-level">
+                            @can('acc.view')
+                                <li>
+                                    <a href="{{ route('admin.role') }}">@lang('leftside.system.role')</a>
+                                </li>
+                            @endcan
+                            @can('inv.view')
+                                <li>
+                                    <a href="{{ route('admin.invoice') }}">@lang('leftside.system.invoice')</a>
+                                </li>
+                            @endcan
+                            @can('log.view')
+                                <li>
+                                    <a href="{{ url('/log-viewer') }}" target="_blank" rel="noopener noreferrer">Logs</a>
+                                </li>
+                            @endcan
+                        </ul>
+                    </div>
+                </li>
+            @endcanany
         </ul>
 
         <!-- Help Box -->

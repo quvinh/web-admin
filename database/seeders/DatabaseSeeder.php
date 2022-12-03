@@ -51,6 +51,13 @@ class DatabaseSeeder extends Seeder
             ['name' => 'acc.view', 'guard_name' => 'admin'],
             ['name' => 'acc.confirm', 'guard_name' => 'admin'],
 
+            // Invoice
+            ['name' => 'inv.add', 'guard_name' => 'admin'],
+            ['name' => 'inv.edit', 'guard_name' => 'admin'],
+            ['name' => 'inv.delete', 'guard_name' => 'admin'],
+            ['name' => 'inv.view', 'guard_name' => 'admin'],
+            ['name' => 'inv.confirm', 'guard_name' => 'admin'],
+
             // Log system
             ['name' => 'log.delete', 'guard_name' => 'admin'],
             ['name' => 'log.view', 'guard_name' => 'admin'],

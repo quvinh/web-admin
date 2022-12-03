@@ -116,7 +116,7 @@
                                 <th>@lang('ENV')</th>
                                 <th style="width: 120px;">@lang('Level')</th>
                                 <th style="width: 65px;">@lang('Time')</th>
-                                <th>@lang('Header')</th>
+                                <th>Header</th>
                                 <th class="text-right">@lang('Actions')</th>
                             </tr>
                         </thead>

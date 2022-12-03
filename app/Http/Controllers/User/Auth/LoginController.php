@@ -22,7 +22,7 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         if ($request->getMethod() == 'GET') {
-            return view('user.pages.login');
+            return 'Login page';
         }
 
         $validator = Validator::make($request->all(), [

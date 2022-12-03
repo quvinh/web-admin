@@ -39,10 +39,12 @@ return [
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
+            'remember' => 10080,
         ],
         'admin' => [
             'driver' => 'session',
             'provider' => 'admins',
+            'remember' => 10080,
         ],
     ],
 

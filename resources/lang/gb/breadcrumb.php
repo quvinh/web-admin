@@ -15,5 +15,10 @@ return [
         'create' => 'Create Role',
         'edit' => 'Edit Role',
     ],
+    'invoice' => [
+        'invoice' => 'Invoice',
+        'create' => 'Create invoice',
+        'edit' => 'Edit invoice'
+    ],
 ];
 ?>

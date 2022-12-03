@@ -49,3 +49,27 @@ Breadcrumbs::for('role', function (BreadcrumbTrail $trail) {
     $trail->parent('dashboard');
     $trail->push(Lang::get('breadcrumb.role.role'), route('admin.role'));
 });
+
+// Dashboard > Role > Edit > [ID]
+Breadcrumbs::for('roleedit', function (BreadcrumbTrail $trail, $id) {
+    $trail->parent('role');
+    $trail->push(Lang::get('breadcrumb.role.edit'), route('admin.role.edit', $id));
+});
+
+// Dashboard > Invoice
+Breadcrumbs::for('invoice', function (BreadcrumbTrail $trail) {
+    $trail->parent('dashboard');
+    $trail->push(Lang::get('breadcrumb.invoice.invoice'), route('admin.invoice'));
+});
+
+// Dashboard > Invoice > Create
+Breadcrumbs::for('invoiceadd', function (BreadcrumbTrail $trail) {
+    $trail->parent('invoice');
+    $trail->push(Lang::get('breadcrumb.invoice.create'), route('admin.invoice.add'));
+});
+
+// Dashboard > Invoice > Edit > [ID]
+Breadcrumbs::for('invoiceedit', function (BreadcrumbTrail $trail, $id) {
+    $trail->parent('invoice');
+    $trail->push(Lang::get('breadcrumb.invoice.edit'), route('admin.invoice.edit', $id));
+});

@@ -15,5 +15,10 @@ return [
         'create' => 'Tạo chức vụ',
         'edit' => 'Sửa chức vụ',
     ],
+    'invoice' => [
+        'invoice' => 'Mẫu phiếu',
+        'create' => 'Tạo mẫu',
+        'edit' => 'Sửa mẫu'
+    ],
 ];
 ?>

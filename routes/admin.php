@@ -11,7 +11,9 @@ use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\FormulaController;
 use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\InvoiceController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\ShopController;
 use App\Http\Controllers\Admin\StoreController;
 use App\Http\Controllers\Admin\SystemController;
@@ -26,6 +28,8 @@ Route::group(['middleware' => ['auth:admin']], function () {
     DashboardController::Routes();
     CalendarController::Routes();
     AccountController::Routes();
+    RoleController::Routes();
+    InvoiceController::Routes();
 });
 
 Route::fallback(function () {

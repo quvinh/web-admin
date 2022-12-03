@@ -17,7 +17,7 @@
         <!-- start page title -->
         {{ Breadcrumbs::render('dashboard') }}
         <!-- end page title -->
-        
+        {{Auth::guard('admin')->check()}}
         <div>
             <canvas id="myChart"></canvas>
         </div>
