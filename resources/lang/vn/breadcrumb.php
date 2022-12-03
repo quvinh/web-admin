@@ -7,6 +7,9 @@ return [
         'create' => 'Tạo tài khoản',
         'edit' => 'Sửa tài khoản',
     ],
+    'profile' => [
+        'profile' => 'Thông tin tài khoản',
+    ],
     'role' => [
         'role' => 'Chức vụ',
         'create' => 'Tạo chức vụ',

@@ -73,7 +73,6 @@ class AccountController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
         $validator = Validator::make($request->all(), [
             'name' => 'required',
             'username' => 'required||unique:users',
@@ -83,7 +82,6 @@ class AccountController extends Controller
         if ($validator->fails()) {
             return redirect()->back()->with('error', 'Nhập thiếu thông tin!');
         }
-        // dd($request->all());
         $gender = ($request->male == '1') ? '1' : '0';
         $user = Admin::create([
             'name' => $request->name,
@@ -96,16 +94,6 @@ class AccountController extends Controller
             'gender' => $gender,
             'address' => $request->address,
         ]);
-
-        // $data = [
-        //     'name' => $request->name,
-        //     'email' => $request->email,
-        //     'username' => $request->username,
-        //     'password' => $request->password,
-        //     'content' => 'Bạn đã được kích hoạt tài khoản người dùng tại web quản lý xét nghiệm!',
-        // ];
-
-        // SendMail::dispatch($data)->delay(now()->addMinute(1));
         return redirect()->back()->with('success', 'Tạo mới tài khoản thành công');
     }
 
@@ -152,11 +140,11 @@ class AccountController extends Controller
             $extension = $file->getClientOriginalExtension();
             if (strcasecmp($extension, 'jpg') === 0 || strcasecmp($extension, 'jepg') === 0 || strcasecmp($extension, 'png') === 0) {
                 $name = Str::random(5) . '_' . $name_file;
-                while (file_exists('images/uploads/account/' . $name)) {
+                while (file_exists('admins/images/account/' . $name)) {
                     $name = Str::random(5) . '_' . $name_file;
                 }
-                $file->move('images/uploads/account/', $name);
-                $image = 'images/uploads/account/' . $name;
+                $file->move('admins/images/account/', $name);
+                $image = 'admins/images/account/' . $name;
             }
             if (file_exists($user->image)) {
                 File::delete($user->image);
@@ -191,7 +179,6 @@ class AccountController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required',
             'email' => 'required',
-            'birthday' => 'required',
             'mobile' => 'required',
             'username' => 'required',
             'address' => 'required',
@@ -212,11 +199,11 @@ class AccountController extends Controller
             $extension = $file->getClientOriginalExtension();
             if (strcasecmp($extension, 'jpg') === 0 || strcasecmp($extension, 'jepg') === 0 || strcasecmp($extension, 'png') === 0) {
                 $name = Str::random(5) . '_' . $name_file;
-                while (file_exists('images/uploads/account/' . $name)) {
+                while (file_exists('admins/images/account/' . $name)) {
                     $name = Str::random(5) . '_' . $name_file;
                 }
-                $file->move('images/uploads/account/', $name);
-                $image = 'images/uploads/account/' . $name;
+                $file->move('admins/images/account/', $name);
+                $image = 'admins/images/account/' . $name;
             }
             if (file_exists($user->image)) {
                 File::delete($user->image);

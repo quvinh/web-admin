@@ -1,15 +1,15 @@
 @extends('admin.home.master')
 
 @section('title')
-Admin | Tài khoản
+Tài khoản
 @endsection
 
 @section('css')
 
     <!-- App css -->
-    <link href="{{ asset('assets/css/icons.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('assets/css/app.min.css') }}" rel="stylesheet" type="text/css" id="light-style">
-    <link href="{{ asset('assets/css/app-dark.min.css') }}" rel="stylesheet" type="text/css" id="dark-style">
+    <link href="{{ asset('admins/css/icons.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('admins/css/app.min.css') }}" rel="stylesheet" type="text/css" id="light-style">
+    <link href="{{ asset('admins/css/app-dark.min.css') }}" rel="stylesheet" type="text/css" id="dark-style">
 @endsection
 
 @section('content')
@@ -45,13 +45,7 @@ Admin | Tài khoản
                             </div>
                             <div class="row">
                                 <div class="col-sm-6 mb-3">
-                                    <label for="select2"><i class="mdi mdi-square-edit-outline"></i> Station</label>
-                                    <select data-toggle="select2" name="station[]" id="station" multiple>
-                                        @foreach ($stations as $station)
-                                            <option value="{{ $station->id }}" {{ in_array($station->id, array_values($manager->all())) ? 'selected' : '' }}>{{ $station->id }} -
-                                                {{ $station->station_name }}</option>
-                                        @endforeach
-                                    </select>
+                                    {{-- HERE --}}
                                 </div>
                                 <div class="col-sm-6 mb-3">
                                     <label for="select2"><i class="mdi mdi-square-edit-outline"></i> Role</label>
@@ -124,7 +118,7 @@ Admin | Tài khoản
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label for="mobile" class="form-label"><i class="mdi mdi-square-edit-outline"></i> mobile</label>
+                                        <label for="mobile" class="form-label"><i class="mdi mdi-square-edit-outline"></i> Mobile</label>
                                         <input type="text" class="form-control" id="mobile" name="mobile"
                                             placeholder="Enter mobile"
                                             value="{{ old('mobile') ? old('mobile') : $account->mobile }}">
@@ -136,7 +130,7 @@ Admin | Tài khoản
                                         <br>
                                         <input type="checkbox" class="form-check-input" id="male" name="male"
                                             {{ $account->gender == '1' ? 'checked' : '' }} value="1">
-                                        <label class="form-check-label" for="male"><i class="mdi mdi-square-edit-outline"></i> Male</label>
+                                        <label class="form-check-label" for="male">Male</label>
                                     </div>
                                 </div>
                                 <div class="col-md-1">
@@ -144,7 +138,7 @@ Admin | Tài khoản
                                         <br><br>
                                         <input type="checkbox" class="form-check-input" id="female" name="female"
                                             {{ $account->gender == '0' ? 'checked' : '' }} value="0">
-                                        <label class="form-check-label" for="female"><i class="mdi mdi-square-edit-outline"></i> Female</label>
+                                        <label class="form-check-label" for="female">Female</label>
                                     </div>
                                 </div>
                                 <div class="col-md-4"></div>
@@ -158,8 +152,8 @@ Admin | Tài khoản
 @endsection
 
 @section('script')
-    <script src="{{ asset('assets/js/vendor.min.js') }}"></script>
-    <script src="{{ asset('assets/js/app.min.js') }}"></script>
+    <script src="{{ asset('admins/js/vendor.min.js') }}"></script>
+    <script src="{{ asset('admins/js/app.min.js') }}"></script>
     <script>
         $(document).ready(function() {
 

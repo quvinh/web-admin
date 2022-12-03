@@ -1,19 +1,19 @@
 @extends('admin.home.master')
 
 @section('title')
-Admin | Tài khoản
+Tài khoản
 @endsection
 
 @section('css')
     <!-- third party css -->
-    <link href="{{ asset('assets/css/vendor/dataTables.bootstrap5.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('assets/css/vendor/responsive.bootstrap5.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('admins/css/vendor/dataTables.bootstrap5.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('admins/css/vendor/responsive.bootstrap5.css') }}" rel="stylesheet" type="text/css">
     <!-- third party css end -->
 
     <!-- App css -->
-    <link href="{{ asset('assets/css/icons.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('assets/css/app.min.css') }}" rel="stylesheet" type="text/css" id="light-style">
-    <link href="{{ asset('assets/css/app-dark.min.css') }}" rel="stylesheet" type="text/css" id="dark-style">
+    <link href="{{ asset('admins/css/icons.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('admins/css/app.min.css') }}" rel="stylesheet" type="text/css" id="light-style">
+    <link href="{{ asset('admins/css/app-dark.min.css') }}" rel="stylesheet" type="text/css" id="dark-style">
 @endsection
 
 @section('content')
@@ -89,10 +89,10 @@ Admin | Tài khoản
                                             </td>
                                             <td class="table-user">
                                                 @if ($account->gender == 1)
-                                                    <img src="{{ asset('images/register/avatarMale.png') }}"
+                                                    <img src="{{ asset('admins/images/users/avatarMale.png') }}"
                                                         alt="table-user" class="me-2 rounded-circle">
                                                 @else
-                                                    <img src="{{ asset('images/register/avatarFemale.png') }}"
+                                                    <img src="{{ asset('admins/images/users/avatarFemale.png') }}"
                                                         alt="table-user" class="me-2 rounded-circle">
                                                 @endif
                                                 <a href="{{ route('admin.account.show', $account->id) }}"
@@ -112,7 +112,7 @@ Admin | Tài khoản
                                                 @endif
                                             </td>
                                             <td>
-                                                {{ $account->phone }}
+                                                {{ $account->mobile }}
                                             </td>
                                             <td>
                                                 {{ $account->email }}
@@ -149,17 +149,17 @@ Admin | Tài khoản
 
 @section('script')
     <!-- bundle -->
-    <script src="{{ asset('assets/js/vendor.min.js') }}"></script>
-    <script src="{{ asset('assets/js/app.min.js') }}"></script>
+    <script src="{{ asset('admins/js/vendor.min.js') }}"></script>
+    <script src="{{ asset('admins/js/app.min.js') }}"></script>
 
     <!-- third party js -->
-    <script src="{{ asset('assets/js/vendor/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('assets/js/vendor/dataTables.bootstrap5.js') }}"></script>
-    <script src="{{ asset('assets/js/vendor/dataTables.responsive.min.js') }}"></script>
-    <script src="{{ asset('assets/js/vendor/responsive.bootstrap5.min.js') }}"></script>
-    <script src="{{ asset('assets/js/vendor/dataTables.checkboxes.min.js') }}"></script>
+    <script src="{{ asset('admins/js/vendor/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('admins/js/vendor/dataTables.bootstrap5.js') }}"></script>
+    <script src="{{ asset('admins/js/vendor/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ asset('admins/js/vendor/responsive.bootstrap5.min.js') }}"></script>
+    <script src="{{ asset('admins/js/vendor/dataTables.checkboxes.min.js') }}"></script>
     <!-- demo js -->
-    <script src="{{ asset('assets/js/pages/demo.toastr.js') }}"></script>
+    <script src="{{ asset('admins/js/pages/demo.toastr.js') }}"></script>
     <!-- -->
     <!-- third party js ends -->
 

@@ -20,6 +20,12 @@ Breadcrumbs::for('calendar', function (BreadcrumbTrail $trail) {
     $trail->push(Lang::get('breadcrumb.calendar'), route('admin.calendar'));
 });
 
+// Dashboard > Profile
+Breadcrumbs::for('profile', function (BreadcrumbTrail $trail) {
+    $trail->parent('dashboard');
+    $trail->push(Lang::get('breadcrumb.profile.profile'), route('admin.profile'));
+});
+
 // Dashboard > Account
 Breadcrumbs::for('account', function (BreadcrumbTrail $trail) {
     $trail->parent('dashboard');

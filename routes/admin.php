@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AccountController;
 use App\Http\Controllers\Admin\Auth\AdminController;
 use App\Http\Controllers\Admin\Auth\LoginController;
 use App\Http\Controllers\Admin\Auth\LogoutController;
@@ -24,6 +25,7 @@ Route::group(['middleware' => ['auth:admin']], function () {
     LogoutController::Routes();
     DashboardController::Routes();
     CalendarController::Routes();
+    AccountController::Routes();
 });
 
 Route::fallback(function () {

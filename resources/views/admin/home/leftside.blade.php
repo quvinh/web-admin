@@ -43,6 +43,24 @@
                     <span> @lang('leftside.calendar') </span>
                 </a>
             </li>
+
+            @can('acc.view')
+                <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#sidebarAccount" aria-expanded="false" aria-controls="sidebarAccount"
+                        class="side-nav-link">
+                        <i class="uil-user-square"></i>
+                        <span> @lang('leftside.account.account') </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="sidebarAccount">
+                        <ul class="side-nav-second-level">
+                            <li>
+                                <a href="{{ route('admin.account') }}">@lang('leftside.account.manaccount')</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            @endcan
         </ul>
 
         <!-- Help Box -->

@@ -227,7 +227,7 @@
                 </div>
 
                 <!-- item-->
-                <a href="#" class="dropdown-item notify-item">
+                <a href="{{ route('admin.profile') }}" class="dropdown-item notify-item">
                     <i class="mdi mdi-account-circle me-1"></i>
                     <span>@lang('header.myaccount')</span>
 

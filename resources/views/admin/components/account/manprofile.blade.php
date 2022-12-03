@@ -1,15 +1,15 @@
 @extends('admin.home.master')
 
 @section('title')
-Admin | Thông tin tài khoản
+Thông tin tài khoản
 @endsection
 
 @section('css')
 
     <!-- App css -->
-    <link href="{{ asset('assets/css/icons.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('assets/css/app.min.css') }}" rel="stylesheet" type="text/css" id="light-style">
-    <link href="{{ asset('assets/css/app-dark.min.css') }}" rel="stylesheet" type="text/css" id="dark-style">
+    <link href="{{ asset('admins/css/icons.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('admins/css/app.min.css') }}" rel="stylesheet" type="text/css" id="light-style">
+    <link href="{{ asset('admins/css/app-dark.min.css') }}" rel="stylesheet" type="text/css" id="dark-style">
 @endsection
 
 @section('content')
@@ -36,7 +36,7 @@ Admin | Thông tin tài khoản
             <div class="col-xl-4 col-lg-6">
                 <div class="card text-center">
                     <div class="card-body">
-                        <img src="{{ $profile->image == null ? asset('assets/images/users/avatar.png') : asset($profile->image) }}"
+                        <img src="{{ $profile->image == null ? asset('admins/images/users/avatar.png') : asset($profile->image) }}"
                             class="rounded-circle avatar-xl img-thumbnail" alt="profile-image">
 
                         <h4 class="mb-0 mt-2">{{ $profile->name }}</h4>
@@ -93,7 +93,7 @@ Admin | Thông tin tài khoản
                                             <div class="mb-3">
                                                 <label for="username" class="form-label">@lang('components/profile.username')</label>
                                                 <input type="text" class="form-control" id="username"
-                                                    name="username" placeholder="@lang('components/profile.enterusername')" required
+                                                    name="username" placeholder="@lang('components/profile.enterusername')" required readonly
                                                     value="{{ old('username') ? old('username') : $profile->username }}">
                                             </div>
                                         </div>
@@ -109,16 +109,16 @@ Admin | Thông tin tài khoản
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="mb-3">
-                                                <label for="phone" class="form-label">@lang('components/profile.phone')</label>
-                                                <input type="text" class="form-control" id="phone"
-                                                    name="phone" placeholder="@lang('components/profile.enterphone')" required
-                                                    value="{{ old('phone') ? old('phone') : $profile->phone }}">
+                                                <label for="mobile" class="form-label">@lang('components/profile.mobile')</label>
+                                                <input type="text" class="form-control" id="mobile"
+                                                    name="mobile" placeholder="@lang('components/profile.entermobile')" required
+                                                    value="{{ old('mobile') ? old('mobile') : $profile->mobile }}">
                                             </div>
                                         </div> <!-- end col -->
                                         <div class="col-md-6">
                                             <div class="mb-3">
-                                                <label for="img" class="form-label">@lang('components/profile.avatar')</label>
-                                                <input type="file" class="form-control" name="img" id="img"
+                                                <label for="image" class="form-label">@lang('components/profile.avatar')</label>
+                                                <input type="file" class="form-control" name="image" id="image"
                                                     value="{{ old('avatar') ? old('avatar') : $profile->avatar }}">
                                             </div>
                                         </div> <!-- end col -->
@@ -129,29 +129,10 @@ Admin | Thông tin tài khoản
                                             <div class="mb-3">
                                                 <label for="birthday" class="form-label">@lang('components/profile.birthday')</label>
                                                 <input type="date" class="form-control" id="birthday"
-                                                    name="birthday" placeholder="@lang('components/profile.enterbirthday')" required
+                                                    name="birthday" placeholder="@lang('components/profile.enterbirthday')"
                                                     value="{{ old('birthday') ? old('birthday') : $profile->birthday }}">
                                             </div>
                                         </div>
-                                        {{-- <div class="col-md-3">
-                                            <label for="">Gender</label>
-                                            <div class="form-check form-checkbox-success mb-3">
-                                                <br>
-                                                <input type="checkbox" class="form-check-input" id="male" required
-                                                    name="male" {{ $profile->gender == '1' ? 'checked' : '' }}
-                                                    value="1">
-                                                <label class="form-check-label" for="male">Male</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="form-check form-checkbox-success mb-3">
-                                                <br><br>
-                                                <input type="checkbox" class="form-check-input" id="female" required
-                                                    name="female" {{ $profile->gender == '0' ? 'checked' : '' }}
-                                                    value="0">
-                                                <label class="form-check-label" for="female">Female</label>
-                                            </div>
-                                        </div> --}}
                                         <div class="col-md-3">
                                             <label for="">@lang('components/profile.gender')</label>
                                             <div class="mt-2">
@@ -186,6 +167,13 @@ Admin | Thông tin tài khoản
                                         <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label for="current-password" class="form-label">@lang('components/profile.currentpass')</label>
+                                                <div class="input-group input-group-merge">
+                                                    <input type="password" id="password" class="form-control" name="password"
+                                                        placeholder="@lang('components/profile.enterpass')" value="{{ old('password') ? old('password') : '' }}">
+                                                    <div class="input-group-text" data-password="false">
+                                                        <span class="password-eye"></span>
+                                                    </div>
+                                                </div>
                                                 <input type="password" class="form-control" id="current-password"
                                                     name="current_password" placeholder="@lang('components/profile.enterpass')"
                                                     value="{{ old('password') ? old('password') : '' }}" required>
@@ -218,6 +206,6 @@ Admin | Thông tin tài khoản
 @endsection
 
 @section('script')
-    <script src="{{ asset('assets/js/vendor.min.js') }}"></script>
-    <script src="{{ asset('assets/js/app.min.js') }}"></script>
+    <script src="{{ asset('admins/js/vendor.min.js') }}"></script>
+    <script src="{{ asset('admins/js/app.min.js') }}"></script>
 @endsection

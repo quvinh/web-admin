@@ -7,6 +7,9 @@ return [
         'create' => 'Create account',
         'edit' => 'Edit account',
     ],
+    'profile' => [
+        'profile' => 'Profile',
+    ],
     'role' => [
         'role' => 'Role',
         'create' => 'Create Role',
